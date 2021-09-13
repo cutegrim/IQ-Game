@@ -11,7 +11,7 @@ public class DragFingerMove : LevelUnlocker
     public GameObject button;
     public GameObject textButton;
     public GameObject owl;
-    // touch offset allows ball not to shake when it starts moving
+    
     float deltaX, deltaY;
    
 
@@ -20,7 +20,7 @@ public class DragFingerMove : LevelUnlocker
     Transform trans;
 
 
-    // ball movement not allowed if you touches not the ball at the first time
+   
     
 
 
@@ -61,7 +61,7 @@ public class DragFingerMove : LevelUnlocker
                 // if you touches the screen
                 case TouchPhase.Began:
 
-                    // if you touch the ball
+                    // if you touch the object
                     if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
                     {
 
@@ -82,7 +82,7 @@ public class DragFingerMove : LevelUnlocker
                 // you move your finger
                 case TouchPhase.Moved:
 
-                    // if you touches the ball and movement is allowed then move
+                    // if you touches the object and movement is allowed then move
                     if (Physics2D.OverlapPoint(touchPos) )
 
                         rb.MovePosition(new Vector2(touchPos.x  - deltaX, touchPos.y  - deltaY));
